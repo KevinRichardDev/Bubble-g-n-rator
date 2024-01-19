@@ -12,13 +12,19 @@ const bubbleMaker = () => {
   bubble.style.left = Math.random() * 100 + "%";
 
   const plusMinus = Math.random() > 0.5 ? 1 : -1;
+
+  // Evenement au click qui supprime une bulle
+  bubble.addEventListener("click", () => {
+    bubble.remove();
+  })
   
   bubble.style.setProperty("--left", Math.random() * 100 * plusMinus + "%");
 
+  // Timer qui fait que la bulle ce supprime au bout de 8 secondes
   setTimeout(() => {
     bubble.remove();
   }, 8000);
 };
 
-setInterval(bubbleMaker, 3000);
+setInterval(bubbleMaker, 1000);
 
