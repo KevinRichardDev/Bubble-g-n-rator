@@ -1,3 +1,7 @@
+const counterDisplay = document.querySelector("h3");
+
+let counter = 0;
+
 const bubbleMaker = () => {
 
   const bubble = document.createElement("span");
@@ -15,6 +19,8 @@ const bubbleMaker = () => {
 
   // Evenement au click qui supprime une bulle
   bubble.addEventListener("click", () => {
+    counter++;
+    counterDisplay.textContent = counter;
     bubble.remove();
   })
   
